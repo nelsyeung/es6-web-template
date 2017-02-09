@@ -4,13 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-const plugins = [
-  new HtmlWebpackPlugin({
-    template: 'index.html',
-  }),
-  new ExtractTextPlugin('styles.css'),
-  new CleanWebpackPlugin(['dist']),
-];
 const buildDir = path.resolve(__dirname, 'dist');
 
 module.exports = {
@@ -64,5 +57,11 @@ module.exports = {
     contentBase: buildDir,
     port: 3000,
   },
-  plugins,
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+    }),
+    new ExtractTextPlugin('styles.css'),
+    new CleanWebpackPlugin(['dist']),
+  ],
 };
