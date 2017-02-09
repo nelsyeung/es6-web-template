@@ -1,8 +1,9 @@
-const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const path = require('path');
 
 const buildDir = path.resolve(__dirname, 'dist');
 
@@ -58,10 +59,11 @@ module.exports = {
     port: 3000,
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-    new ExtractTextPlugin('styles.css'),
-    new CleanWebpackPlugin(['dist']),
+    new StyleLintPlugin(),
   ],
 };

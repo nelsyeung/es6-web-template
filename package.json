@@ -25,6 +25,8 @@
     "postcss-loader": "^1.2.2",
     "sass-loader": "^5.0.0",
     "style-loader": "^0.13.1",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-webpack-plugin": "^0.6.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
   },
@@ -34,6 +36,9 @@
       "mocha": true
     },
     "extends": "airbnb-base"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   },
   "babel": {
     "presets": [
