@@ -6,7 +6,7 @@
 
 Clone this or download this repository
 ```
-git clone https://github.com/nelsyeung/es6-web-template.git
+git clone https://github.com/nelsyeung/eslatest-web-template.git
 ```
 
 Install dependencies
